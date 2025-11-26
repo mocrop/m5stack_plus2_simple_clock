@@ -11,11 +11,16 @@ void setup() {
 
 void loop() {
   M5.update();
-  if(M5.BtnB.wasPressed()) {
+  if(M5.BtnB.wasClicked()) {
     watch.start_setting();
-  } else if(M5.BtnA.wasPressed()) {
+    sleep(100);
+  } else if(M5.BtnPWR.wasClicked()) {
+    watch.set_time(-1);
+    sleep(100);
+  } else if(M5.BtnA.wasClicked()) {
     watch.set_time();
-  }
+    sleep(100);
+  } 
   watch.update();
 }
 
