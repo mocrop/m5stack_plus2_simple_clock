@@ -49,7 +49,7 @@ void Watch::update()
   M5.Lcd.setTextSize(2);
   if(power_level != M5.Power.getBatteryLevel()) {
     power_level = M5.Power.getBatteryLevel();
-    M5.Lcd.fillRect(M5.Lcd.getCursorX(), M5.Lcd.getCursorY(), M5.Lcd.width(), M5.Lcd.fontHeight(), BLACK);
+    M5.Lcd.fillRect(M5.Lcd.getCursorX(), M5.Lcd.getCursorY(), M5.Lcd.fontWidth()*11, M5.Lcd.fontHeight(), BLACK);
   } 
   M5.Lcd.printf("Bat: %d%%\n", M5.Power.getBatteryLevel());
   auto cur_dt = M5.Rtc.getDateTime();
